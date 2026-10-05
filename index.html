@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GCB Care Track — Complaint Tracker</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { gcbblue: '#062B5C', gcbgold: '#D4A72C' } } } }
+  </script>
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900">
+  <header class="bg-gcbblue text-white shadow-lg">
+    <div class="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
+      <div><p class="text-xs font-semibold uppercase tracking-[.2em] text-gcbgold">Independent prototype</p><h1 class="text-xl font-bold">GCB Care Track</h1></div>
+      <a href="../admin/" class="rounded-lg border border-white/30 px-3 py-2 text-sm hover:bg-white/10">Staff portal</a>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-5xl px-5 py-10">
+    <section class="mx-auto max-w-2xl text-center">
+      <span class="inline-flex rounded-full bg-gcbgold/15 px-3 py-1 text-sm font-semibold text-gcbblue">The Extra Mile • Transparency</span>
+      <h2 class="mt-5 text-4xl font-black tracking-tight text-gcbblue sm:text-5xl">Know where your complaint stands.</h2>
+      <p class="mt-4 text-slate-600">Enter the ticket ID you received from customer service to view the latest progress on your complaint.</p>
+
+      <form id="trackForm" class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <input id="ticketInput" required autocomplete="off" placeholder="e.g. GCB-1001" class="min-w-0 flex-1 rounded-xl border border-slate-300 bg-white px-4 py-4 text-lg uppercase outline-none ring-gcbgold focus:ring-2" />
+        <button class="rounded-xl bg-gcbblue px-7 py-4 font-bold text-white shadow hover:opacity-95">Track ticket</button>
+      </form>
+      <p id="demoHint" class="mt-3 text-xs text-slate-500">Demo ticket: GCB-1001</p>
+    </section>
+
+    <section id="result" class="mx-auto mt-10 hidden max-w-3xl"></section>
+
+    <section class="mx-auto mt-14 grid max-w-4xl gap-4 sm:grid-cols-3">
+      <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200"><div class="text-2xl">01</div><h3 class="mt-2 font-bold">Received</h3><p class="mt-1 text-sm text-slate-500">Your complaint gets a unique ticket ID.</p></div>
+      <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200"><div class="text-2xl">02</div><h3 class="mt-2 font-bold">Tracked</h3><p class="mt-1 text-sm text-slate-500">See which stage your issue has reached.</p></div>
+      <div class="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200"><div class="text-2xl">03</div><h3 class="mt-2 font-bold">Updated</h3><p class="mt-1 text-sm text-slate-500">View the latest customer-facing update.</p></div>
+    </section>
+
+    <p class="mx-auto mt-12 max-w-3xl text-center text-xs text-slate-400">Prototype only — no real banking information should be entered.</p>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
