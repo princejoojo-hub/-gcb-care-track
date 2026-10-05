@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GCB Care Track — Staff Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={theme:{extend:{colors:{gcbblue:'#062B5C',gcbgold:'#D4A72C'}}}}</script>
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-900">
+<header class="bg-gcbblue text-white"><div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4"><div><p class="text-xs uppercase tracking-widest text-gcbgold">Staff dashboard</p><h1 class="font-black">GCB Care Track</h1></div><button id="logout" class="hidden rounded-lg border border-white/30 px-3 py-2 text-sm">Sign out</button></div></header>
+<main class="mx-auto max-w-6xl px-5 py-8">
+  <section id="login" class="mx-auto max-w-md rounded-3xl bg-white p-7 shadow-xl ring-1 ring-slate-200">
+    <h2 class="text-2xl font-black text-gcbblue">Staff sign in</h2><p class="mt-2 text-sm text-slate-500">Use the staff account created in Supabase Authentication.</p>
+    <form id="loginForm" class="mt-6 space-y-4"><input id="email" type="email" required placeholder="Staff email" class="w-full rounded-xl border p-3"/><input id="password" type="password" required placeholder="Password" class="w-full rounded-xl border p-3"/><button class="w-full rounded-xl bg-gcbblue p-3 font-bold text-white">Sign in</button></form><p id="loginError" class="mt-4 text-sm text-red-600"></p>
+  </section>
+  <section id="dashboard" class="hidden">
+    <div class="flex flex-wrap items-end justify-between gap-4"><div><h2 class="text-3xl font-black text-gcbblue">Complaint queue</h2><p class="mt-1 text-slate-500">Update customer-facing progress without exposing internal notes.</p></div><button id="refresh" class="rounded-xl bg-white px-4 py-3 font-semibold shadow-sm ring-1 ring-slate-200">Refresh</button></div>
+    <div id="tickets" class="mt-7 grid gap-5 lg:grid-cols-2"></div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="app.js"></script>
+</body></html>
